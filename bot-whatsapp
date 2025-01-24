@@ -1,0 +1,80 @@
+const { Client, LocalAuth } = require('whatsapp-web.js');
+const qrcode = require('qrcode-terminal');
+
+const client = new Client({
+    authStrategy: new LocalAuth()
+});
+
+client.on('qr', qr => {
+    qrcode.generate(qr, { small: true });
+    console.log('Escaneie o QR Code para iniciar o bot');
+});
+
+client.on('ready', () => {
+    console.log('Bot está pronto!');
+});
+
+const opcoesPerguntas = `
+Olá! Escolha uma opção:
+
+1️⃣ - Volta às aulas
+2️⃣ - Horário de funcionamento e endereço
+3️⃣ - Lista de material escolar
+4️⃣ - Cadastro transporte universitário
+5️⃣ - Cadastro transporte escolar (ETEC diurno)
+6️⃣ - Atividades extras complementares
+7️⃣ - Falar com um atendente
+`;
+
+const respostas = {
+    '1': `*INÍCIO DAS AULAS*
+As aulas começarão no dia 10 de fevereiro de 2025. O transporte escolar estará disponível a partir dessa data.
+
+*ATENÇÃO*
+De 3 a 7 de fevereiro, as escolas estarão abertas para acolhimento das famílias:
+- Recebimento do kit material escolar
+- Preenchimento de autorizações (transporte)
+- Fichas de informação de saúde
+- Divulgação sala/turma
+
+*HORÁRIO DAS AULAS*
+- Café da manhã: 6h50
+- Início das aulas: 7h
+- Término: 13h20` ,
+
+    '2': `Av. Vereador Osvaldo Kushida Nº536 - Centro
+Orindiuva - 15480-003 - São Paulo - Brasil
+WhatsApp (17) 99617-8834
+E-mail: educacao@orindiuva.sp.gov.br
+www.educacao-orindiuva.com
+
+*Horário de Atendimento ao Público: 07h às 17h*` ,
+
+    '3': `Veja a lista de materiais acessando o link:
+https://www.educacao-orindiuva.com/lista-de-materiais` ,
+
+    '4': `Para realizar o cadastro do transporte universitário São José do Rio Preto/Votuporanga acesse:
+bit.ly/cadastro-transporte-escolar` ,
+
+    '5': `Para realizar o cadastro do transporte Escolar (ETEC) São José do Rio Preto:
+bit.ly/Transporte-Educacional-Orindiuva` ,
+
+    '6': `*ATIVIDADES EXTRA COMPLEMENTARES*
+Atividades opcionais como judô, karatê, balé, futebol, futsal e vôlei.
+Inscreva-se até 27/01 pelo link:
+www.educacao-orindiuva.com/escola-tempo-integral` ,
+
+    '7': 'Vou encaminhar você para um atendente. Aguarde um momento.'
+};
+
+client.on('message', async message => {
+    if (message.body.toLowerCase() === 'oi' || message.body.toLowerCase() === 'olá') {
+        await message.reply(opcoesPerguntas);
+    } else if (respostas[message.body]) {
+        await message.reply(respostas[message.body]);
+    } else {
+        await message.reply('Não entendi. Digite "oi" para ver as opções.');
+    }
+});
+
+client.initialize();
