@@ -82,23 +82,24 @@ client.on('message', async msg => {
         userStates.set(user, 'main_menu');
     }
     else if (currentState === 'main_menu') {
-        const option = parseInt(msg.body);
+    const option = parseInt(msg.body);
 
-        if (option === 8) {
-            client.sendMessage(user, 'Você escolheu falar com um atendente. Aguarde um momento.');
-            userStates.set(user, 'waiting_attendant'); // Estado para "aguardando atendente"
-            return;
-        } 
-        else if (responses[option]) {
-            client.sendMessage(user, responses[option]);
+    if (option === 8) {
+        client.sendMessage(user, 'Você escolheu falar com um atendente. Aguarde um momento.');
+        userStates.set(user, 'waiting_attendant'); // Estado para "aguardando atendente"
+        return;
+    } 
+    else if (responses[option]) {
+        client.sendMessage(user, responses[option]).then(() => {
             if (option !== 8) {
                 client.sendMessage(user, `\n\nDê uma nota entre 1 e 5 para nosso atendimento:\n` +
                 `5. 😍 Excelente!\n4. 😃 Gostei!\n3. 😑 Poderia melhorar!\n` +
                 `2. 🙁 Não Gostei!\n1. 😡 Ruim!`);
                 userStates.set(user, 'rating');
             }
-        }
+        });
     }
+}
     else if (currentState === 'waiting_attendant') {
         // Enquanto o usuário estiver no estado "aguardando atendente", o bot não responde
         return;
