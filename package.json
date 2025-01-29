@@ -1,15 +1,21 @@
 {
-  "name": "bot-whatsapp",
+  "name": "meu-bot-whatsapp",
   "version": "1.0.0",
-  "main": "bot.js",
+  "main": "index.js",
   "scripts": {
-    "start": "node bot.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
   "dependencies": {
-    "whatsapp-web.js": "^1.19.5",
-    "qrcode-terminal": "^0.12.0"
-  },
-  "engines": {
-    "node": "16.x"
+    "@adiwajshing/baileys": "^5.0.0",
+    "@hapi/boom": "^10.0.1",
+    "fs": "^0.0.1-security",
+    "moment": "^2.30.1",
+    "punycode": "^2.3.1",
+    "qrcode-terminal": "^0.12.0",
+    "whatsapp-web.js": "^1.26.0"
   }
 }
