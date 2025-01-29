@@ -94,7 +94,7 @@ client.on('message', async msg => {
             if (option !== 8) {
                 client.sendMessage(user, `\n\nDê uma nota entre 1 e 5 para nosso atendimento:\n` +
                 `5. 😍 Excelente!\n4. 😃 Gostei!\n3. 😑 Poderia melhorar!\n` +
-                `2. 🙁 Achei ruim!\n1. 😡 Péssimo!`);
+                `2. 🙁 Não Gostei!\n1. 😡 Ruim!`);
                 userStates.set(user, 'rating');
             }
         }
