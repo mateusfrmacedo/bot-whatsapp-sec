@@ -1,0 +1,112 @@
+Bot WhatsApp SME
+
+Usuario: manda qualquer MENSAGEM
+ 
+ Ele responde de acordo com a hora (Bom dia) (Boa Tarde) (Boa noite) seguido da mensagem (Bem-vindo à Secretaria Municipal de Educação de Orindiúva. Em que posso te ajudar hoje?)
+ 
+ Em seguida ele mostra as opções 
+ 
+ Escolha uma opção:
+
+1️⃣ - Volta às aulas
+2️⃣ - Horário de funcionamento e endereço
+3️⃣ - Lista de material escolar
+4️⃣ - Cadastro transporte universitário
+5️⃣ - Cadastro transporte escolar (ETEC diurno)
+6️⃣ - Atividades extras complementares
+7️⃣ - Documentos para matrícula
+8️⃣ - Falar com um atendente
+
+
+
+Respostas para cada numero escolhido 
+
+1 - INÍCIO DAS AULAS
+As aulas começarão no dia 10 de fevereiro de 2025. O transporte escolar estará disponível a partir dessa data.
+
+ATENÇÃO
+De 3 a 7 de fevereiro, as escolas estarão abertas para acolhimento das famílias:
+- Recebimento do kit material escolar
+- Preenchimento de autorizações (transporte)
+- Fichas de informação de saúde
+- Divulgação sala/turma
+
+HORÁRIO DAS AULAS
+- Café da manhã: 6h50
+- Início das aulas: 7h
+- Término: 13h20
+
+2 - Av. Vereador Osvaldo Kushida Nº536 - Centro
+Orindiuva - 15480-003 - São Paulo - Brasil
+WhatsApp (17) 99617-8834
+E-mail: educacao@orindiuva.sp.gov.br
+www.educacao-orindiuva.com
+
+Horário de Atendimento ao Público: 07h às 17h
+
+3 - Veja a lista de materiais acessando o link:
+https://www.educacao-orindiuva.com/lista-de-materiais 
+
+4 - Para realizar o cadastro do transporte universitário São José do Rio Preto/Votuporanga acesse:
+bit.ly/cadastro-transporte-escolar
+
+5 - Para realizar o cadastro do transporte Escolar (ETEC) São José do Rio Preto:
+bit.ly/Transporte-Educacional-Orindiuva
+
+6 - ATIVIDADES EXTRA COMPLEMENTARES*
+Atividades opcionais como judô, karatê, balé, futebol, futsal e vôlei.
+Inscreva-se até 27/01 pelo link:
+www.educacao-orindiuva.com/escola-tempo-integral
+
+
+7- *DOCUMENTOS NECESSÁRIOS PARA MATRÍCULAS*
+
+⬤ DOCUMENTO DE TRANSFERÊNCIA
+(histórico escolar ou declaração da escola de origem com boletim)
+⬤ FOTO 3X4 
+⬤ CÓPIA CERTIDÃO NASCIMENTO CARTÃO
+⬤DECLARAÇÃO DE VACINAÇÃO EMITIDO PELO UBS
+⬤ CÓPIA RG e CPF dos responsáveis
+⬤ COMPROVANTE RESIDENCIA NOMINAL E/OU  DECLARAÇÃO DO PROPRIETÁRIO 
+⬤ CÓPIA RG da criança (se possuir)
+⬤ CARTÃO BOLSA FAMÍLIA (se possuir)
+⬤ CARTÃO SUS
+
+
+8 - Vou encaminhar você para um atendente. Aguarde um momento.
+
+
+Em seguida ele pergunta com quem a pessoa deseja conversar
+Você escolheu falar com um atendente. 
+Com quem deseja falar? Escolha uma opção:
+
+1️⃣ - Gabriela
+2️⃣ - Andreia
+3️⃣ - Silvania
+4️⃣ - Thais
+5️⃣ - Mateus
+
+Você escolheu falar com (nome do escolhido). Aguarde atendimento.
+
+O bot para de mandar mensagem caso eu envie uma mensagem primeiro. Ou se a pessoa escolher o numero 8 desejando falar com um atendente. 
+
+O bot também não manda mensagem em grupo de WhatsApp. 
+
+Apos a escolha do atendente, o bot para de enviar as opções de escolha. Volta enviar caso o chat fique inativo por 5 minutos. 
+
+E manda uma mensagem que o chat ficou inativo pois não obteve resposta.  
+
+Sua avaliação é muito importante para melhorarmos nosso atendimento. 
+
+Acrescente no final 
+
+Dê uma nota entre 1 e 5.
+
+5. 😍 Excelente!
+4. 😃 Gostei!
+3. 😑 Poderia melhorar!
+2. 🙁 Não gostei!
+1. 😡 Ruim!
+
+A *Secretaria de Educação de Orindiúva* agradece seu contato!
+Até logo 👋
