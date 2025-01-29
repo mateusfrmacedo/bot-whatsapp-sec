@@ -52,26 +52,6 @@ O bot será autenticado e pronto para uso.
 📩 Enviar mensagens automáticas
 O bot pode responder mensagens automaticamente.
 
-Enviar uma saudação personalizada baseada no horário do dia.
-Coletar avaliações dos usuários e salvar no arquivo avaliacoes.json.
-Administradores podem monitorar e revisar essas avaliações.
-⚙️ Configurações personalizáveis
-Mudar o número do administrador:
-Edite a variável myNumber no código ou use uma variável de ambiente:
-const myNumber = process.env.ADMIN_NUMBER || 'seu_numero@c.us';
-No Windows, defina a variável antes de rodar:
-set ADMIN_NUMBER=5517996178834@c.us
-node botv3.js
-No macOS/Linux:
-export ADMIN_NUMBER=5517996178834@c.us
-node botv3.js
-Alterar a saudação:
-Edite a função getGreeting() no código para personalizar os horários de "Bom dia", "Boa tarde" e "Boa noite".
-Salvar logs das mensagens recebidas:
-Modifique o código para gravar mensagens em um arquivo logs.txt:
-client.on('message', msg => {
-    fs.appendFileSync('logs.txt', `[${new Date().toISOString()}] ${msg.from}: ${msg.body}\n`);
-});
 🛑 5. Parando o bot
 
 Para parar o bot, pressione CTRL + C no terminal.
@@ -92,14 +72,6 @@ Adicione esse arquivo ao Inicializar do Windows (shell:startup no Executar).
 macOS
 Crie um script .sh e adicione ao crontab para iniciar o bot automaticamente.
 
-📌 7. Solução de Problemas
-
-❌ Erro: QR Code não aparece
-Verifique se o WhatsApp Web está funcionando no seu navegador.
-Teste rodar o bot com headless: false no puppeteer para ver o navegador abrir:
-const client = new Client({
-    authStrategy: new LocalAuth(),
-    puppeteer: { headless: false }
 });
 ❌ Erro de autenticação expirada
 Delete a pasta ~/.wwebjs_auth (Linux/macOS) ou C:\Users\seu-usuario\.wwebjs_auth (Windows) e reconecte o WhatsApp.
