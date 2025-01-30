@@ -33,7 +33,7 @@ moment e fs.
 3.1 - Iniciar o bot
 Execute o seguinte comando:
 
-node botv3.js
+node bot.js
 
 Se estiver usando nodemon (para recarregar automaticamente quando o código mudar), use:
 
