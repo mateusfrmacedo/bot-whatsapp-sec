@@ -71,6 +71,3 @@ Adicione esse arquivo ao Inicializar do Windows (shell:startup no Executar).
 macOS
 Crie um script .sh e adicione ao crontab para iniciar o bot automaticamente.
 
-});
-❌ Erro de autenticação expirada
-Delete a pasta ~/.wwebjs_auth (Linux/macOS) ou C:\Users\seu-usuario\.wwebjs_auth (Windows) e reconecte o WhatsApp.
