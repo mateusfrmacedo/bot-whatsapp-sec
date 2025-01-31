@@ -1,3 +1,6 @@
+
+![img](https://github.com/user-attachments/assets/bbc8844d-7ccd-45d9-a719-a9fed8562005)
+
 📌 Guia de Instalação e Uso do Bot WhatsApp
 
 ✅ 1. Pré-requisitos
