@@ -40,7 +40,7 @@ node bot.js
 
 Se estiver usando nodemon (para recarregar automaticamente quando o código mudar), use:
 
-npx nodemon botv3.js
+npx nodemon bot.js
 
 3.2 - Escanear o QR Code
 O terminal mostrará um QR Code.
