@@ -39,13 +39,13 @@ const getGreeting = () => {
 
 // Respostas pré-definidas COMPLETAS
 const responses = {
-    1: `INÍCIO DAS AULAS\nAs aulas começarão no dia 10 de fevereiro de 2025. O transporte escolar estará disponível a partir dessa data.\n\nATENÇÃO\nDe 3 a 7 de fevereiro, as escolas estarão abertas para retirada dos kits de material escolar.`,
+    1: `INÍCIO DAS AULAS\nAs aulas começarão no dia 10 de fevereiro de 2025. O transporte escolar estará disponível a partir dessa data.\n\nATENÇÃO\nDe 3 a 7 de fevereiro, as escolas estarão abertas para atendimento aos pais e alunos.`,
     2: `Av. Vereador Osvaldo Kushida Nº536 - Centro\nOrindiuva - 15480-003 - São Paulo - Brasil\nWhatsApp (17) 99617-8834\nE-mail: educacao@orindiuva.sp.gov.br\nwww.educacao-orindiuva.com\n\nHorário de funcionamento: Segunda a Sexta, das 8h às 17h.`,
     3: `Veja a lista de materiais acessando o link:\nhttps://www.educacao-orindiuva.com/lista-de-materiais`,
     4: `Para realizar o cadastro do transporte universitário São José do Rio Preto/Votuporanga acesse:\nbit.ly/cadastro-transporte-escolar`,
     5: `Para realizar o cadastro do transporte Escolar (ETEC) São José do Rio Preto:\nbit.ly/Transporte-Educacional-Orindiuva`,
-    6: `ATIVIDADES EXTRA COMPLEMENTARES*\nAtividades opcionais como judô, karatê, balé, futebol, futsal e vôlei.\nInscreva-se até 27/01 pelo link:\nwww.educacao-orindiuva.com/escola-tempo-integral`,
-    7: `*DOCUMENTOS NECESSÁRIOS PARA MATRÍCULAS*\n\n⬤ DOCUMENTO DE TRANSFERÊNCIA\n(histórico escolar ou declaração da escola de origem com boletim)\n⬤ FOTO 3X4 \n⬤ CÓPIA CERTIDÃO NASCIMENTO\n⬤ CÓPIA RG e CPF\n⬤ COMPROVANTE DE ENDEREÇO`,
+    6: `ATIVIDADES EXTRA COMPLEMENTARES*\nAtividades opcionais como judô, karatê, balé, futebol, futsal e vôlei.\nCompareça ao Centro Esportivo(campo de futebol) ou no CRAS para realizar sua matricula.`,
+    7: `*DOCUMENTOS NECESSÁRIOS PARA MATRÍCULAS*\n\n⬤ DOCUMENTO DE TRANSFERÊNCIA\n(histórico escolar ou declaração da escola de origem com boletim)\n⬤ FOTO 3X4 \n⬤ CÓPIA CERTIDÃO NASCIMENTO \n⬤ CÓPIA RG E CPF \n⬤ CÓPIA COMPROVANTE DE RESIDÊNCIA`,
     8: `Vou encaminhar você para um atendente. Aguarde um momento.`
 };
 
@@ -58,17 +58,22 @@ const checkBirthdays = () => {
 
     const today = moment().format('MM-DD');
     data.forEach(employee => {
-        const birthday = moment(employee['Data de Nascimento']).format('MM-DD');
+        const birthday = moment(employee['Data de Nascimento'], 'DD/MM/YYYY').format('MM-DD');
         if (birthday === today) {
             const firstName = employee['Nome'].split(' ')[0]; // Pega o primeiro nome
-            const message = `${firstName}, Feliz Aniversário! Desejamos a você um dia cheio de alegria e realizações. Sua dedicação à educação é admirável e inspiradora. Que este novo ano de vida lhe traga muito sucesso, alegrias e paz. 🎂🎉🥳🎈💚\n\nCom carinho,\nSecretaria Municipal de Educação de Orindiuva.`;
-            client.sendMessage(`${employee['Numero de WhatsApp']}@c.us`, message);
+            const message = `${firstName}, Feliz Aniversário! Desejamos a você um dia cheio de alegria e realizações. Sua dedicação à educação é admirável e inspiradora. Que este novo ano seja repleto de sucesso e felicidade! 🎉🥳`;
+            const recipientNumber = employee['Numero de WhatsApp'].replace(/\D/g, ''); // Remove caracteres não numéricos
+            const recipientWid = `${recipientNumber}@c.us`;
+
+            client.sendMessage(recipientWid, message).catch(err => {
+                console.error(`Erro ao enviar mensagem para ${recipientWid}:`, err);
+            });
         }
     });
 };
 
-// Agendar a verificação diária às 8h da manhã
-cron.schedule('0 8 * * *', checkBirthdays);
+// Agendar a verificação diária às 10h da manhã
+cron.schedule('0 10 * * *', checkBirthdays);
 
 client.on('qr', qr => qrcode.generate(qr, { small: true }));
 
